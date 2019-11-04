@@ -27,3 +27,5 @@ Lastly, how a sprite's X coordinate is represented is a bit odd. It's 9–bit, b
 
 This driver maintains a pair of 16–bit coordinates, where 0,0 is the top left of the screen. All mouse movements are performed on this set of coordinates. Bounds checking and limits are then performed on these coordinates. They are then mapped to the sprites by applying the screen offsets.
 
+Lastly, it is convenient to use the 16–bit coordinates as the position of mouse events.
+
