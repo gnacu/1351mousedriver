@@ -15,7 +15,7 @@ This code is distantly based upon the code from the User's Manual, with signific
 * Two Sprites
 * 16-bit Overflow Prevention
 
-It could be commented better within the source code. But bear in mind that a full technical discussion has been published to the [C64os.com weblog](http://www.c64os.com/post/1351mousedriver).
+It could be commented better within the source code. But bear in mind that a [full technical discussion](http://www.c64os.com/post/1351mousedriver) has been published to the [C64os.com weblog](http://www.c64os.com/weblog/).
 
 Screen edge bounded means that the mouse cursor will stop when it hits an edge of the screen. Many C64 programs, likely those that got their mouse driver code from the 1351 User's Manual, allow the mouse to go beyond a screen edge, and often roll around to the bottom when you go to far off the top, etc.
 
