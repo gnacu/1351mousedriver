@@ -3,9 +3,9 @@
 
 For C64 OS, I had to go searching around the web looking for 1351 mouse driver code that I could embed and modify for my purposes. 
 
-The only code I found was on codebase64.org. That code is directly lifted from the printed listing in the back few pages of the 1351 User's Guide. It's short, poorly documented, proportional but not accelerated, and not bounded to the screen edges.
+The only code I found was on codebase64.org. That code is directly lifted from the printed listing in the back few pages of the 1351 User's Guide, including replicating things like defining a constant that never gets used. It's short, poorly documented, proportional but not accelerated, and not bounded to the screen edges.
 
-This code is distantly based upon the code from the User's Manual, with significant improvements. 
+This code is based upon the code from the User's Manual, but with significant improvements. 
 
 ### Improvements
 
