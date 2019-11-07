@@ -139,8 +139,9 @@ scanmovs
          lda potx
 oldpotx  ldy #0
          jsr movechk
-         sty oldpotx+1
          beq noxmove
+
+         sty oldpotx+1
 
          clc
          adc musposx
@@ -154,8 +155,9 @@ noxmove
          lda poty
 oldpoty  ldy #0
          jsr movechk
-         sty oldpoty+1
          beq noymov
+
+         sty oldpoty+1
 
          clc
          eor #$ff       ;Reverse Sign
@@ -222,12 +224,9 @@ neg      ora #%10000000
 
          rts
 
-nomove   ldy oldvalue+1
-         lda #0
-
-         ;A = 0
-         ;X = 0
-         ;Y = oldvalue
+nomove   ;A = -
+         ;X = -
+         ;Y = -
          ;Z = 1
 
          rts
