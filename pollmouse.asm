@@ -87,6 +87,7 @@ chky     ldy musposy+1
          bmi zeroy
          beq loychk
 
+         dey musposy+1
          ldy #maxy
          sty musposy
          bne movemus
@@ -110,17 +111,17 @@ movemus  clc
 
          lda musposx+1
          adc #0
-         beq *+4   ;Both sprite bits lo
-         sec
-         rol a     ;Both sprite bits hi
-
-         tax
+         beq clearxhi
+         
+         ;set x sprite pos high
+         lda xposmsb
+         ora #%00000011         
+         bne *+7
+         
+clearxhi ;set x sprite pos low
          lda xposmsb
          and #%11111100
-         sta tmpxmsb+1
-
-         txa
-tmpxmsb  ora #$ff
+         
          sta xposmsb
 
          clc
@@ -179,8 +180,6 @@ movechk  ;Y -> Old Pot Value
          sty oldvalue+1
          tay
 
-         ldx #0
-
          sec
 oldvalue sbc #$ff
          and #%01111111
@@ -194,6 +193,7 @@ oldvalue sbc #$ff
          bcc *+3
          asl a   ;X2
 
+         ldx #0
          cmp #0
 
          ;A > 0
@@ -215,7 +215,6 @@ neg      ora #%10000000
          asl a       ;X2
 
          ldx #$ff
-         cmp #0
 
          ;A < 0
          ;X = $ff (sign extension)
